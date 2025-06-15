@@ -42,7 +42,7 @@ export default{
             }
             this.error = ""
 
-            const response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=5&appid=ea95d7be6facb880f812da37738353fc`)
+            const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=5&appid=ea95d7be6facb880f812da37738353fc`)
             if (!response.data.length) {
                 this.error = "Такого міста немає в Базі Даних. Спробуйте іншу назву."
                 return
