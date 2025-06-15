@@ -41,15 +41,14 @@ export default{
                 return false
             }
             this.error = ""
-            const apiKey = process.env.VUE_APP_WEATHER_API_KEY;
 
-            const response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=5&appid=${apiKey}`)
+            const response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=5&appid=ea95d7be6facb880f812da37738353fc`)
             if (!response.data.length) {
                 this.error = "Такого міста немає в Базі Даних. Спробуйте іншу назву."
                 return
             }
             console.log(response.data)
-            const weather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${response.data[0].lat}&lon=${response.data[0].lon}&units=metric&appid=${apiKey}`)
+            const weather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${response.data[0].lat}&lon=${response.data[0].lon}&units=metric&appid=ea95d7be6facb880f812da37738353fc`)
             this.info = weather.data
             console.log(weather)
         },
